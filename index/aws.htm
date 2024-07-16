@@ -1,0 +1,795 @@
+{dede:include filename="header.htm"/}
+<style>
+    .eco_co_btn_link::before,
+    .eco_co_btn_link::after {
+        display: none;
+    }
+
+    .aws_banner {
+        background-image: url({dede:global.cfg_templets_skin/}/images/aws/aws-banner.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 470px;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .cloud_link_header_title {
+        color: #FFFFFF;
+        font-weight: 500;
+    }
+
+    .cloud_link_header_info {
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+
+    .cloud_link_advantage {
+        background: #F7F7FD;
+        text-align: center;
+    }
+
+    .cloud_link_advantage_title,
+    .cloud_link_case_title {
+        font-weight: 500;
+        color: #333333;
+        text-align: center;
+    }
+
+    .cloud_link_advantage_content {
+        display: grid;
+    }
+
+    .advantage_content_div {
+        text-align: center;
+    }
+
+    .advantage_content_div_info {
+        font-weight: 400;
+        color: #555555;
+    }
+
+    .cloud_link_case_menu_list {
+        border-bottom: 1px solid #D1D1E0;
+    }
+
+    .cloud_link_case_menu_list>ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cloud_link_case_menu_list li {
+        list-style-type: none;
+        cursor: pointer;
+        text-align: center;
+        transition: all .2s ease-in-out;
+    }
+
+    .cloud_link_case_menu_name {
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: 500;
+        color: #333333;
+        display: inline-block;
+    }
+
+    .cloud_link_case_menu_list_selected {
+        box-shadow: 0 2px 0 #EE5522;
+        margin-bottom: 1px;
+    }
+
+    .cloud_link_case_content_item {
+        display: flex;
+    }
+
+    .cloud_link_case_content_item:not(:first-child) {
+        display: none;
+    }
+
+    .content_item_detail_title {
+        font-weight: 500;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+    .content_item_detail_info {
+        color: #555555;
+        margin-bottom: 20px;
+    }
+
+    .content_item_detail_point {
+        background: #EEEDF5;
+        border-radius: 2px;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        color: #555555;
+    }
+
+    .content_item_detail_point_div {
+        display: flex;
+    }
+
+    .content_item_detail_point_div>div {
+        flex: 1;
+    }
+
+    .content_item_detail_point_flex {
+        display: flex;
+    }
+
+    .content_item_detail_point_flex>div {
+        flex: 1;
+    }
+
+    .case_content_item_img {
+        flex: 1;
+    }
+
+    .Qualification {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Qualification_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 1184px;
+        padding: 30px 0;
+    }
+
+    .Qualification_top .img {
+        width: 390px;
+        height: 362px;
+        margin-left: -20px;
+        margin-right: 30px;
+    }
+
+    .Qualification_top .img img {
+        width: 390px;
+        height: 362px;
+    }
+
+    .Qualification_right {
+        width: 784px;
+        padding: 0 50px;
+    }
+
+    .Qualification_right h4 {
+        width: 784px;
+        height: 48px;
+        font-family: AlibabaPuHuiTi_2_55_Regular;
+        font-size: 36px;
+        color: #3D3D3D;
+        line-height: 48px;
+        text-align: left;
+        font-style: normal;
+    }
+
+    .Qualification_right p {
+        font-family: PingFangSC, PingFang SC;
+        font-weight: 400;
+        font-size: 16px;
+        color: #333333;
+        line-height: 24px;
+        text-align: justify;
+        font-style: normal;
+        margin-top: 24px;
+    }
+
+    .Qualification_bottom {
+        height: 180px;
+        background: linear-gradient(90deg, #EEEDF5 0%, #F5F5F8 100%);
+        padding: 40px 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Qualification_bottom img {
+        width: 1184px;
+        height: 100px;
+    }
+
+
+    /* 手机 */
+    @media screen and (max-width: 767px) {
+        .cloud_link_content {
+            padding: 0 16px;
+        }
+
+        .cloud_link_header {
+            height: 280px;
+            background: url({dede:global.cfg_templets_skin/}/images/cloud_link_banner_phone.png) no-repeat;
+            background-size: cover;
+        }
+
+        .cloud_link_header_title {
+            font-size: 36px;
+            line-height: 50px;
+            padding: 42px 0 16px 0;
+        }
+
+        .cloud_link_header_info {
+            font-size: 10px;
+            line-height: 18px;
+            width: 100%;
+        }
+
+        .cloud_link_advantage {
+            padding: 40px 0;
+        }
+
+        .cloud_link_advantage_title,
+        .cloud_link_case_title {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        .cloud_link_advantage_content {
+            grid-template-columns: repeat(1, 1fr);
+            margin-top: 24px;
+            grid-row-gap: 20px;
+        }
+
+        .advantage_content_div_info {
+            font-size: 12px;
+            line-height: 22px;
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        .cloud_link_case {
+            padding: 40px 0;
+        }
+
+        .cloud_link_case_menu_list {
+            border-bottom: none;
+        }
+
+        .cloud_link_case_menu_list>ul {
+            flex-direction: column;
+            margin-top: 20px;
+            margin-left: -16px;
+            margin-right: -16px;
+        }
+
+        .cloud_link_case_menu_list li {
+            text-align: left;
+        }
+
+        .cloud_link_case_menu_name {
+            background: #E1E6F0;
+            border-radius: 1px;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #5D5D70;
+            line-height: 22px;
+            width: 100%;
+            transition: 0.3s linear;
+        }
+
+        .cloud_link_case_menu_list_selected {
+            box-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .cloud_link_case_menu_list_selected>.cloud_link_case_menu_name {
+            background: #FF6644 !important;
+            color: #FFFFFF !important;
+        }
+
+        .cloud_link_arrow {
+            margin-top: -18px;
+            border-color: #5D5D70;
+            margin-right: 20px;
+        }
+
+        .cloud_link_case_menu_list_selected>.cloud_link_arrow {
+            transform: translate(5px, 0) rotate(-225deg);
+            transition: 0.5s linear;
+            border-color: #fff;
+        }
+
+        .cloud_link_case_menu_list_selected .cloud_link_case_content_item {
+            display: flex !important;
+            flex-direction: column;
+            padding: 20px 16px;
+        }
+
+        .content_item_detail_title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2E2E44;
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        .content_item_detail_info {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 22px;
+        }
+
+        .content_item_detail_title_point {
+            font-size: 12px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 22px;
+        }
+
+        .content_item_detail_point_div {
+            flex-direction: column;
+        }
+
+        .content_item_detail_point_div>div:first-child {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+
+        .content_item_detail_point_flex>div:first-child {
+            margin-right: 10px;
+        }
+
+        .case_content_item_img {
+            margin-top: 20px;
+        }
+
+        .content_item_detail_point {
+            font-size: 12px;
+            font-weight: 400;
+            color: #555555;
+            line-height: 18px;
+            padding: 6px 0;
+        }
+    }
+
+
+
+
+    /* 平板 */
+    @media screen and (min-width: 768px) {
+        .cloud_link_content {
+            padding: 0 80px;
+        }
+
+        .cloud_link_header {
+            height: 467px;
+            background: url({dede:global.cfg_templets_skin/}/images/cloud_link_banner_pad.png) no-repeat;
+            background-size: cover;
+        }
+
+        .cloud_link_header_title {
+            font-size: 46px;
+            line-height: 65px;
+            padding: 158px 0 20px 0;
+        }
+
+        .cloud_link_header_info {
+            font-size: 14px;
+            line-height: 22px;
+            width: 478px;
+        }
+
+        .cloud_link_advantage {
+            padding: 50px 0 80px 0;
+        }
+
+        .cloud_link_advantage_title,
+        .cloud_link_case_title {
+            font-size: 28px;
+            line-height: 56px;
+        }
+
+        .cloud_link_advantage_content {
+            grid-template-columns: repeat(1, 1fr);
+            margin-top: 30px;
+            grid-row-gap: 36px;
+        }
+
+        .advantage_content_div_info {
+            font-size: 14px;
+            line-height: 26px;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 32px;
+        }
+
+        .cloud_link_case {
+            padding: 50px 0;
+        }
+
+        .cloud_link_case_menu_list>ul {
+            margin-top: 30px;
+        }
+
+        .cloud_link_case_menu_list li {
+            padding: 0 20px;
+            padding-bottom: 10px;
+        }
+
+        .cloud_link_case_menu_list li:first-child {
+            margin-right: 25px;
+        }
+
+        .cloud_link_case_content_list {
+            margin-top: 30px;
+        }
+
+        .cloud_link_case_content_item {
+            flex-direction: column;
+        }
+
+        .content_item_detail_title {
+            font-size: 14px;
+            line-height: 28px;
+        }
+
+        .content_item_detail_title_point {
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+
+        .content_item_detail_info {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 28px;
+        }
+
+        .content_item_detail_point {
+            height: 44px;
+            line-height: 28px;
+            padding: 8px 0;
+        }
+
+        .content_item_detail_point_div {
+            flex-direction: row;
+        }
+
+        .content_item_detail_point_div>div:first-child {
+            margin-right: 10px;
+        }
+
+        .content_item_detail_point_flex>div:first-child {
+            margin-right: 10px;
+        }
+
+        .case_content_item_img {
+            margin-top: 32px;
+        }
+    }
+
+    /* 中等桌面 */
+    @media screen and (min-width: 992px) {
+        .cloud_link_content {
+            width: 992px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .cloud_link_header {
+            height: 323px;
+            background: url({dede:global.cfg_templets_skin/}/images/cloud_link_banner_medium.png) no-repeat;
+            background-size: cover;
+        }
+
+        .cloud_link_header_title {
+            padding: 64px 0 20px 0;
+        }
+
+        .cloud_link_header_info {
+            width: 420px;
+        }
+
+        .cloud_link_advantage {
+            padding: 100px 0 130px 0;
+        }
+
+        .cloud_link_advantage_title,
+        .cloud_link_case_title {
+            font-size: 36px;
+            line-height: 56px;
+        }
+
+        .cloud_link_advantage_content {
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 64px;
+            grid-column-gap: 60px;
+        }
+
+        .advantage_content_div_info {
+            font-size: 16px;
+            line-height: 26px;
+            width: 100%;
+            margin-top: 32px;
+        }
+
+        .cloud_link_case {
+            padding: 100px 0;
+        }
+
+        .cloud_link_case_menu_list>ul {
+            margin-top: 36px;
+        }
+
+        .cloud_link_case_menu_list li {
+            padding: 0 80px;
+            padding-bottom: 16px;
+        }
+
+        .cloud_link_case_menu_list li:first-child {
+            margin-right: 40px;
+        }
+
+        .cloud_link_case_content_list {
+            margin-top: 40px;
+        }
+
+        .cloud_link_case_content_item {
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .case_content_item_detail {
+            width: 380px;
+            margin-right: 32px;
+        }
+
+        .content_item_detail_title {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        .content_item_detail_info {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+        }
+
+        .content_item_detail_point {
+            height: 38px;
+            line-height: 18px;
+            padding: 10px 0;
+        }
+
+        .content_item_detail_point_div {
+            flex-direction: column;
+        }
+
+        .content_item_detail_point_div>div:first-child {
+            margin-bottom: 16px;
+            margin-right: 0;
+        }
+
+        .content_item_detail_point_flex>div:first-child {
+            margin-right: 16px;
+        }
+
+        .case_content_item_img {
+            margin-top: 0;
+        }
+    }
+
+    /* 大屏幕 */
+    @media screen and (min-width: 1200px) {
+        .cloud_link_content {
+            width: 1170px;
+            margin: 0 auto;
+        }
+
+        .cloud_link_header {
+            height: 300px;
+            background: url({dede:global.cfg_templets_skin/}/images/cloud_link_banner_pc.png) no-repeat;
+            background-size: cover;
+        }
+
+        .cloud_link_header_title {
+            padding: 40px 0 20px 0;
+        }
+
+        .cloud_link_advantage_content {
+            grid-column-gap: 30px;
+        }
+
+        .advantage_content_div {
+            padding: 0 30px;
+        }
+
+        .cloud_link_case {
+            padding: 100px 0 120px 0;
+        }
+
+        .cloud_link_case_menu_list li {
+            padding: 0 120px;
+            padding-bottom: 16px;
+        }
+
+        .cloud_link_case_content_item {
+            align-items: flex-end;
+        }
+
+        .case_content_item_detail {
+            width: 430px;
+            margin-right: 40px;
+        }
+    }
+</style>
+<!-- 封面图 开始 -->
+<div class="eco_co_cover aws_banner" id="brief_introduction">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="eco_co_cover_text">
+                    <div class="eco_co_cover_text_title">
+                        AWS
+                    </div>
+                    <div class="eco_co_cover_text_content">
+                        首都在线作为AWS中国区重要的SPP合作伙伴，与AWS建立全面战略合作。依托首都在线与AWS在云计算领域的深厚技术积累与积淀，为企业提供全栈的云服务，覆盖从基础设施服务到数据分析和人工智能，再到应用开发和安全等的全生命周期需求，旨在整合双方资源优势，推动企业实现全面云化，共同助力企业实现数字化转型。
+                    </div>
+                    <a class="eco_co_btn_link" href="http://capitalonlinepartner.mikecrm.com/P4lgoVJ"
+                        target="_blank">立即购买</a>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </div>
+</div>
+<!-- 封面图 结束 -->
+<!-- 资质 开始 -->
+<div class="Qualification">
+    <section class="Qualification_top">
+        <div class="img">
+            <img src="{dede:global.cfg_templets_skin/}/images/aws/aws-img.png" alt="" />
+        </div>
+        <div class="Qualification_right">
+            <h4>资质</h4>
+            <p>AWS能力方面，已取得官方认证的迁移能力资质，目前首云已经有多个客户希望通过首云连接到Amazon Web Service(AWS)的实际案例，客户在AWS 使用Direct
+                Connect产品，然后通过首云提供的物理链路和设备打通首云和AWS之间的网络，实现首云VDC和AWS
+                VPC私网互通，完成业务组网。首云的云连接服务是通往AWS资源的优选路径。当您有跨云业务需求时，您可以选择由首云提供的云连接整体解决方案。</p>
+            <p>作为AWS官方认证的高级服务商，首云已取得Authorized Commercial Reseller、AWS Solution Provider Program、China Solution
+                Provider等资质认证，并得到了AWS
+                Direct Connect 交付认证，首云提供连接设备和链接，并使用 AWS 的 Direct Connect 服务为客户实现业务互操作性。</p>
+        </div>
+    </section>
+</div>
+<div class="Qualification_bottom">
+    <img src="{dede:global.cfg_templets_skin/}/images/aws/资质.png" alt="" />
+</div>
+
+<!-- 资质 结束 -->
+<!-- 成功案例 开始 -->
+<div class="cloud_link_case">
+    <div class="cloud_link_content">
+        <div class="cloud_link_case_title">成功案例</div>
+        <div class="cloud_link_case_menu_list">
+            <ul>
+                <li class="cloud_link_case_menu_list_selected">
+                    <span class="cloud_link_case_menu_name">首云-AWS业务互通解决方案</span><span
+                        class="bottom-arrow mobile-arrow cloud_link_arrow hidden-sm hidden-md hidden-lg"></span>
+                    <div class="cloud_link_case_content_item hidden-sm hidden-md hidden-lg">
+                        <div class="case_content_item_detail">
+                            <div class="content_item_detail_title">首云-AWS业务互通解决方案</div>
+                            <div class="content_item_detail_info" style="margin-bottom: 10px">
+                                AWS：<br />客户在AWS的新加坡、达拉斯和法兰克福等多个可用区部署了业务，并且该业务同样需要在首云中国大陆和中国香港部署，两个云厂商多个区域的业务需要连通。
+                            </div>
+                            <div class="content_item_detail_info">
+                                首云：<br />客户将中国大陆和中国香港的业务部署在首云，需要实现这些业务与部署在AWS海外多个地区的业务互联互通。首云提供连接设备和链路，利用AWS的Direct
+                                Connect 服务为客户完成了业务互通。
+                            </div>
+                            <div class="content_item_detail_title content_item_detail_title_point">特点</div>
+                            <div class="content_item_detail_point_div">
+                                <div class="content_item_detail_point">保证客户业务连通性</div>
+                                <div class="content_item_detail_point">提升业务稳定性</div>
+                            </div>
+                        </div>
+                        <div class="case_content_item_img">
+                            <img src="{dede:global.cfg_templets_skin/}/images/cloud_link_case_jiagou1.png"
+                                style="width: 100%;" alt="" />
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="cloud_link_case_menu_name">首云多云互联解决方案</span><span
+                        class="bottom-arrow mobile-arrow cloud_link_arrow hidden-sm hidden-md hidden-lg"></span>
+                    <div class="cloud_link_case_content_item hidden-sm hidden-md hidden-lg">
+                        <div class="case_content_item_detail">
+                            <div class="content_item_detail_title">首云多云互联解决方案</div>
+                            <div class="content_item_detail_info" style="margin-bottom: 10px">
+                                AWS和GCP：<br />客户目前在AWS和GCP的多个区域进行了业务部署，属于典型的多云部署模式。该客户同样在首云也有业务部署，客户希望将首云、AWS和GCP多个云厂商的业务互联互通。
+                            </div>
+                            <div class="content_item_detail_info">
+                                首云：<br />其中，首云和AWS的互联是通过使用AWS的Direct Connect
+                                服务，结合首云提供的设备和链路将两端网络互通。在业务部署的过程中，首云无论是设备还是链路都是多活模式，保证客户对业务所需的SLA。
+                            </div>
+                            <div class="content_item_detail_title content_item_detail_title_point">特点</div>
+                            <div class="content_item_detail_point_div">
+                                <div class="content_item_detail_point_flex">
+                                    <div class="content_item_detail_point">多云部署</div>
+                                    <div class="content_item_detail_point">多活容灾</div>
+                                </div>
+                                <div class="content_item_detail_point">专业的技术服务团队</div>
+                            </div>
+                        </div>
+                        <div class="case_content_item_img">
+                            <img src="{dede:global.cfg_templets_skin/}/images/cloud_link_case_jiagou2.png"
+                                style="width: 100%;" alt="" />
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="cloud_link_case_content_list hidden-xs">
+            <div class="cloud_link_case_content_item">
+                <div class="case_content_item_detail">
+                    <div class="content_item_detail_title">首云-AWS业务互通解决方案</div>
+                    <div class="content_item_detail_info">
+                        AWS：<br />客户在AWS的新加坡、达拉斯和法兰克福等多个可用区部署了业务，并且该业务同样需要在首云中国大陆和中国香港部署，两个云厂商多个区域的业务需要连通。
+                    </div>
+                    <div class="content_item_detail_info">
+                        首云：<br />客户将中国大陆和中国香港的业务部署在首云，需要实现这些业务与部署在AWS海外多个地区的业务互联互通。首云提供连接设备和链路，利用AWS的Direct Connect
+                        服务为客户完成了业务互通。
+                    </div>
+                    <div class="content_item_detail_title content_item_detail_title_point">特点</div>
+                    <div class="content_item_detail_point_div">
+                        <div class="content_item_detail_point">保证客户业务连通性</div>
+                        <div class="content_item_detail_point">提升业务稳定性</div>
+                    </div>
+                </div>
+                <div class="case_content_item_img">
+                    <img src="{dede:global.cfg_templets_skin/}/images/cloud_link_case_jiagou1.png" style="width: 100%;"
+                        alt="" />
+                </div>
+            </div>
+            <div class="cloud_link_case_content_item">
+                <div class="case_content_item_detail">
+                    <div class="content_item_detail_title">首云多云互联解决方案</div>
+                    <div class="content_item_detail_info">
+                        AWS和GCP：<br />客户目前在AWS和GCP的多个区域进行了业务部署，属于典型的多云部署模式。该客户同样在首云也有业务部署，客户希望将首云、AWS和GCP多个云厂商的业务互联互通。
+                    </div>
+                    <div class="content_item_detail_info">
+                        首云：<br />其中，首云和AWS的互联是通过使用AWS的Direct Connect
+                        服务，结合首云提供的设备和链路将两端网络互通。在业务部署的过程中，首云无论是设备还是链路都是多活模式，保证客户对业务所需的SLA。
+                    </div>
+                    <div class="content_item_detail_title content_item_detail_title_point">特点</div>
+                    <div class="content_item_detail_point_div">
+                        <div class="content_item_detail_point_flex">
+                            <div class="content_item_detail_point">多云部署</div>
+                            <div class="content_item_detail_point">多活容灾</div>
+                        </div>
+                        <div class="content_item_detail_point">专业的技术服务团队</div>
+                    </div>
+                </div>
+                <div class="case_content_item_img">
+                    <img src="{dede:global.cfg_templets_skin/}/images/cloud_link_case_jiagou2.png" style="width: 100%;"
+                        alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 成功案例 结束 -->
+<script>
+    $(function () {
+        $(".cloud_link_case_menu_list li").click(function () {
+            var me = $(this);
+            var clickWidth = $(window).width();
+            var index = me.index();
+            if (clickWidth < 768) {
+                me.toggleClass('cloud_link_case_menu_list_selected')
+            } else {
+                me.addClass("cloud_link_case_menu_list_selected").siblings().removeClass("cloud_link_case_menu_list_selected");
+                $(".cloud_link_case_content_list").children("div").eq(index).css("display", "flex").siblings().hide();
+            }
+        });
+    })
+</script>
+{dede:include filename="footer.htm"/}
